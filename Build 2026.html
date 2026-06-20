@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Build 2026 - El Futuro de la IA Agéntica</title>
+    <style>
+        /* Variables de color inspiradas en Microsoft / Azure */
+        :root {
+            --bg-dark: #0b0f19;
+            --card-bg: #161b26;
+            --primary-blue: #0078d4;
+            --accent-cyan: #00f2fe;
+            --text-light: #f5f6f8;
+            --text-muted: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Contenedor Global */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navbar Simple (Estilo Landing sin enlaces de fuga) */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px 0;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(0, 120, 212, 0.15) 0%, transparent 60%);
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(0, 120, 212, 0.2);
+            color: var(--accent-cyan);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #0078d4, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), #00569e);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+            background: linear-gradient(135deg, #0086f0, var(--primary-blue));
+        }
+
+        /* Sección de Características / Innovaciones */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Formulario de Conversión (CTA Principal) */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 120, 212, 0.05));
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--card-bg), #1a2234);
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group input[type="email"], 
+        .form-group input[type="text"] {
+            padding: 14px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(11, 15, 25, 0.8);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        .form-group button {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cta-box { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Microsoft <span>Build //</span></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="tagline">Resumen Ejecutivo & Acceso On-Demand</span>
+            <h1>Construye el Futuro con <br><span>Sistemas Agénticos de IA</span></h1>
+            <p>Descubre el ecosistema tecnológico que está transformando el desarrollo de software. Domina los nuevos modelos MAI, implementa agentes autónomos en Azure y escala tus aplicaciones sobre Windows 11.</p>
+            <a href="#registro" class="btn">Acceder al Kit de Desarrollador</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Pilares Clave del Ecosistema</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>IA Agéntica Avanzada</h3>
+                    <p>Pasa del simple código a flujos de trabajo autónomos. Diseña, opera y optimiza agentes multitarea que razonan de forma contextual sobre tu lógica de negocio.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Modelos MAI Multimodales</h3>
+                    <p>Explora la nueva familia de 7 modelos especializados en visión, voz, transcripción y razonamiento profundo, listos para integrarse nativamente en tus apps.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Windows para Devs</h3>
+                    <p>Entorno ultra optimizado en Windows 11 con entornos de aislamiento a nivel empresarial para desplegar subagentes híbridos entre local y la nube de Azure.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="registro">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Descarga las Sesiones y Código Fuente</h2>
+                <p>Regístrate para obtener el Kit Completo del Microsoft Build, incluyendo repositorios de GitHub con ejemplos prácticos de Agentic AI y guías de despliegue en Azure.</p>
+                
+                <form class="form-group" action="#" method="POST" onsubmit="alert('¡Gracias por registrarte! (Esto es una simulación)'); return false;">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Correo Electrónico Profesional" required>
+                    <button type="submit" class="btn">Obtener Recursos Gratis</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Developer Community Hub. Inspirado en las últimas novedades del Microsoft Build. Landing de distribución informativa independiente.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
